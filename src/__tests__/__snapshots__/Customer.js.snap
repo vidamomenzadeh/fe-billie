@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Customer modal render correctly when props open is false 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Customer modal render correctly when props open is true 1`] = `
+<div
+  aria-hidden="true"
+>
+  <div />
+</div>
+`;
