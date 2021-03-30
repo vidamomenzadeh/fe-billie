@@ -1,16 +1,16 @@
-import React from 'react'
-
 import {Provider} from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 import {createStore, applyMiddleware} from 'redux'
-import './index.css'
+import {logger} from 'redux-logger'
+import {render} from 'react-dom'
+
 import LayoutCmp from './components/LayoutCmp'
 import CustomersList from './components/customers/List'
 import rootSaga from './sagas'
 import rootReducer from './reducers'
-import {logger} from 'redux-logger'
-import {render} from 'react-dom'
 import ThemeProvider from './style/theme'
+
+import './index.css'
 
 const sagaMiddleware = createSagaMiddleware()
 

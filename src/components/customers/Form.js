@@ -14,7 +14,6 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 
 import {updateCustomer} from '../../actions/customer'
-
 import {BurronWrapper} from '../customers/styledComponent'
 
 const useStyles = makeStyles((theme) => ({

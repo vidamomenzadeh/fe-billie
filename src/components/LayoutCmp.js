@@ -1,12 +1,6 @@
-import {Component, Fragment} from 'react'
+import {Component} from 'react'
 import Header from './HeaderCmp'
 import Footer from './FooterCmp.js'
-
-const defaultProps = {
-  showFooter: true,
-  showHeader: true,
-  showLeftSidebar: true
-}
 
 class LayoutCmp extends Component {
   constructor(props) {
@@ -19,36 +13,31 @@ class LayoutCmp extends Component {
     }
   }
 
-  renderHeader(showHeader, headerProps) {
-    if (showHeader) {
-      const props = headerProps || {}
-
-      return <Header headerProps={props}></Header>
-    } else {
-      return null
-    }
+  renderHeader(headerProps) {
+    return <Header props={headerProps}></Header>
   }
 
-  renderFooter(showFooter) {
-    if (showFooter) {
-      return <Footer />
-    } else {
-      return null
-    }
+  renderFooter() {
+    return <Footer />
   }
 
   render() {
-    const _props = Object.assign({}, defaultProps, this.props)
-    const {children, showHeader, showFooter, headerProps} = _props
+    const {children, showHeader, showFooter, headerProps} = this.props
 
     return (
-      <Fragment>
-        {this.renderHeader(showHeader, headerProps)}
+      <>
+        {showHeader && this.renderHeader(headerProps)}
         {children}
-        {this.renderFooter(showFooter)}
-      </Fragment>
+        {showFooter && this.renderFooter()}
+      </>
     )
   }
+}
+
+LayoutCmp.defaultProps = {
+  showFooter: true,
+  showHeader: true,
+  showLeftSidebar: true
 }
 
 export default LayoutCmp
